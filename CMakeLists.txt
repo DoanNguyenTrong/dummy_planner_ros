@@ -116,7 +116,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
  INCLUDE_DIRS include
- LIBRARIES dummy_planner_ros
+ LIBRARIES dummy_planner_ros base_local_planner
  CATKIN_DEPENDS ackermann_msgs base_local_planner costmap_2d dynamic_reconfigure geometry_msgs move_base nav_msgs pluginlib roscpp rospy std_msgs tf visualization_msgs
 #  DEPENDS system_lib
 )
@@ -162,9 +162,8 @@ add_library( ${PROJECT_NAME}
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(${PROJECT_NAME}
-  ${catkin_LIBRARIES} 
+  ${catkin_LIBRARIES}
 )
-
 
 # Executable
 # add_executable(${PROJECT_NAME}
